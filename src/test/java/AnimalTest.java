@@ -21,14 +21,6 @@ public class AnimalTest {
 
     @Test
     public void testGetFood() throws Exception {
-        List<String> animalPredator = animal.getFood("Хищник");
-        List<String> expectedFoodPredator = List.of("Животные", "Птицы", "Рыба");
-        assertEquals("Неверный список еды для Хищника", expectedFoodPredator, animalPredator);
-
-        List<String> animalHerbivore = animal.getFood("Травоядное");
-        List<String> expectedFoodHerbivore = List.of("Трава", "Различные растения");
-        assertEquals("Неверный список еды для Травоядного", expectedFoodHerbivore, animalHerbivore);
-
         try {
             animal.getFood(UNSUPPORTED_ANIMAL);
         } catch (Exception e) {

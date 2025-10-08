@@ -21,8 +21,8 @@ public class LionParameterizedTest {
         this.hasMane = hasMane;
     }
 
-    @Parameterized.Parameters()
-    public static Object[][] getFoodData() {
+    @Parameterized.Parameters(name = "Sex({0}) = Mane({1})")
+    public static Object[][] doesHaveManeData() {
         return new Object[][] {
                 {"Самец", true},
                 {"Самка", false},
@@ -30,7 +30,7 @@ public class LionParameterizedTest {
     }
 
     @Test
-    public void testGetFood() throws Exception {
+    public void testDoesHaveMane() throws Exception {
         Lion lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();
         assertEquals(hasMane, actual);
